@@ -1,0 +1,244 @@
+<!--
+	&#x5601;...
+	&#x4F60;&#x4E0D;&#x8BE5;&#x6765;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;
+	&#x5FEB;&#x7C97;K&#xFF01;
+-->
+<!DOCTYPE html>
+<html>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=496902072&auto=1&height=66"></iframe>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+ 
+	<title>&#x7BA1;&#x7406;&#x5927;&#x5927;&#x8F9B;&#x82E6;&#x4E86;</title>
+<style>
+    table.lamp 
+ {
+     width:100%;
+     border:0px solid #808080;
+ }
+    table.lamp th, td 
+ { 
+    padding:10px
+ }
+    table.lamp th 
+ {
+    width:40px;
+ }
+</style>
+<style>
+.ps {
+    background-color:black;
+    color:#808080;
+    margin:20px;
+    padding:20px;
+}	
+</style>
+<style type="text/css">
+body
+{ 
+background:url(./images/YuanShen.jpg)fixed center; 
+}
+</style>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+<script>
+    !function(win, lib) {
+        var timer,
+            doc     = win.document,
+            docElem = doc.documentElement,
+ 
+            vpMeta   = doc.querySelector('meta[name="viewport"]'),
+            flexMeta = doc.querySelector('meta[name="flexible"]'),
+ 
+            dpr   = 0,
+            scale = 0,
+ 
+            flexible = lib.flexible || (lib.flexible = {});
+ 
+        if (vpMeta) {
+ 
+            var initial = vpMeta.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+ 
+            if (initial) {
+                scale = parseFloat(initial[1]); 
+                dpr = parseInt(1 / scale); 
+            }
+ 
+        }
+        else if (flexMeta) {
+            var flexMetaContent = flexMeta.getAttribute("content");
+            if (flexMetaContent) {
+ 
+                var initial = flexMetaContent.match(/initial\-dpr=([\d\.]+)/),
+                    maximum = flexMetaContent.match(/maximum\-dpr=([\d\.]+)/);
+ 
+                if (initial) {
+                    dpr = parseFloat(initial[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+ 
+                if (maximum) {
+                    dpr = parseFloat(maximum[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+            }
+        }
+ 
+        if (!dpr && !scale) {
+            var u = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi)),
+                _dpr = win.devicePixelRatio;
+ 
+            dpr = u ? ( (_dpr >= 3 && (!dpr || dpr >= 3))
+                    ? 3
+                    : (_dpr >= 2 && (!dpr || dpr >= 2))
+                        ? 2
+                        : 1
+                )
+                : 1;
+ 
+            scale = 1 / dpr;
+        }
+ 
+        docElem.setAttribute("data-dpr", dpr);
+ 
+        if (!vpMeta) {
+            vpMeta = doc.createElement("meta");
+ 
+            vpMeta.setAttribute("name", "viewport");
+            vpMeta.setAttribute("content",
+                "initial-scale=" + scale + ", maximum-scale=" + scale + ", minimum-scale=" + scale + ", user-scalable=no");
+ 
+            if (docElem.firstElementChild) {
+                docElem.firstElementChild.appendChild(vpMeta)
+            } else {
+                var div = doc.createElement("div");
+                div.appendChild(vpMeta);
+                doc.write(div.innerHTML);
+            }
+        }
+ 
+        function setFontSize() {
+            var winWidth = docElem.getBoundingClientRect().width;
+ 
+            if (winWidth / dpr > 540) {
+                (winWidth = 540 * dpr);
+            }
+            var baseSize = winWidth / 10;
+ 
+            docElem.style.fontSize = baseSize + "px";
+            flexible.rem = win.rem = baseSize;
+        }
+ 
+        win.addEventListener("resize", function() {
+            clearTimeout(timer);
+            timer = setTimeout(setFontSize, 300);
+        }, false);
+ 
+        win.addEventListener("orientationchange", function() {
+            clearTimeout(timer);
+            timer = setTimeout(setFontSize, 300);
+        }, false);
+ 
+        win.addEventListener("pageshow", function(e) {
+            if (e.persisted) {
+                clearTimeout(timer);
+                timer = setTimeout(setFontSize, 300);
+            }
+        }, false);
+ 
+        if ("complete" === doc.readyState) {
+            doc.body.style.fontSize = 12 * dpr + "px";
+        } else {
+            doc.addEventListener("DOMContentLoaded", function() {
+                doc.body.style.fontSize = 12 * dpr + "px";
+            }, false);
+        }
+ 
+        setFontSize();
+ 
+        flexible.dpr = win.dpr = dpr;
+ 
+        flexible.refreshRem = setFontSize;
+ 
+        flexible.rem2px = function(d) {
+            var c = parseFloat(d) * this.rem;
+            if ("string" == typeof d && d.match(/rem$/)) {
+                c += "px";
+            }
+            return c;
+        };
+ 
+        flexible.px2rem = function(d) {
+            var c = parseFloat(d) / this.rem;
+ 
+            if ("string" == typeof d && d.match(/px$/)) {
+                c += "rem";
+            }
+            return c;
+        }
+    }(window, window.lib || (window.lib = {}));
+ 
+</script>
+<script type="text/javascript">
+        window.onload = function(){
+            document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                if(e.keyCode == 123){
+                    return false;
+                //Ctrl+Shift+I
+                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                    return false;
+                //Shift+F10
+                }else if((e.shiftKey) && (e.keyCode == 121)){
+                    return false;
+                //Ctrl+U
+                }else if((e.ctrlKey) && (e.keyCode == 85)){
+                    return false;
+                }
+            };
+            document.oncontextmenu = function (){
+                return false;
+            }
+        }
+</script>
+</head>
+<table class="lamp">
+<tr>
+  <th>
+    <a href="https://tieba.baidu.com/f?kw=%CA%C0%BD%E7rpg&fr=ala0&tpl=5"target="_blank">
+    <img src="./images/twrpg.jpg"alt="&#x4E16;&#x754C;RPG"></a>
+  </th>
+  <td><font size="4" face=SimHei color="#808080">
+	<p>&#x6211;&#xFF0C;&#x662F;&#x4E2A;&#x9E3D;&#x5B50;</p>
+	<p>&#x6211;&#xFF0C;&#x4E48;&#x6709;&#x622A;&#x56FE;</p>
+	<p>&#x6211;&#xFF0C;&#x4E5F;&#x4E48;&#x5F55;&#x50CF;</p>
+	<p>&#x4F46;&#xFF0C;&#x6211;&#x7231;&#x4E16;&#x754C;</p>
+  </font></td>
+</tr>
+</table>
+</br>
+</br>
+<p style="font-size:15px"><a href="https://tieba.baidu.com/p/5651715146?pid=119206713478&cid=0&red_tag=3491800545#119206713478" target="_blank">&#x539F;&#x5E16;</a></p>
+<a href="http://imgsrc.baidu.com/forum/pic/item/06055ffd5266d016512bf9459b2bd40734fa358f.jpg"target="_blank">
+<img src="./images/h1.png" alt="&#x6D3B;&#x52A8;&#x7269;&#x54C1;&#x622A;&#x56FE;">
+</a>
+</br>
+<a href="http://imgsrc.baidu.com/forum/pic/item/a35c3858ccbf6c81a5484b85b03eb13532fa40ba.jpg"target="_blank">
+<img src="./images/h2.png" alt="&#x6D3B;&#x52A8;&#x7269;&#x54C1;&#x622A;&#x56FE;">
+</a>
+</br>
+<a href="http://imgsrc.baidu.com/forum/pic/item/350f8bd9f2d3572cb399fbb18613632763d0c347.jpg"target="_blank">
+<img src="./images/h3.jpg" alt="&#x6D3B;&#x52A8;&#x7269;&#x54C1;&#x622A;&#x56FE;">
+</a>
+</br>
+<a href="http://imgsrc.baidu.com/forum/pic/item/9e9a44345982b2b73aca5ea93dadcbef77099b61.png"target="_blank">
+<img src="./images/h4.png" alt="&#x6D3B;&#x52A8;&#x7269;&#x54C1;&#x622A;&#x56FE;">
+</a>
+<div align="center"class="ps">
+<p style="font-size:15px;font-family:SimHei">&#x8D1F;&#x4F24;&#x809D;&#x6D3B;&#x52A8;&#x4E0D;&#x5BB9;&#x6613;&#x5440;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x8BC1;&#x660E;&#x77ED;&#x65F6;&#x95F4;&#x6211;&#x4E5F;&#x62FF;&#x4E0D;&#x51FA;&#x6765;&#xFF0C;&#x6709;&#x5176;&#x4ED6;&#x95EE;&#x9898;<a href="mailto:every_moment@qq.com?subject=">&#x8BF7;&#x8054;&#x7CFB;&#x6211;&#x3002;</a></p>
+</div>
+</body>
+</html>
